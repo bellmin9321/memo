@@ -1,0 +1,53 @@
+axios vs fetch
+
+Axios
+1. 사용하기 좀 더 편리
+2. fetch에는 존재하지 않는 기능이 좀 더 많음
+3. Promise based
+
+fetch
+1. 라이브러리를 import하지 않아도 사용할 수 있음
+2. React Native의 경우 업데이트가 잦아, 라이브러리(ex: axios 같은 것들)이 업데이트를 쫒아오지 못하는 경우가 생기는데, Fetch는 이걸 걱정하지 않아도 됨
+3. Promise based
+4. Request Aborting에 대해서 표준적인 방법을 제공해 주지 못함
+5. 네트워크 에러 발생시 계소 기다려야함 > response timeout API제공이 안됨.
+6. 지원하지 않는 브라우져 존재하지
+7. Error Handling 관련 문제가 있음
+ - Catch에 걸렸을 때, 이후 .then( ~~~ )을 실행한다
+ - axios의 경우 .then(~~~)을 실행하지 않고, console 창에 해당 에러로그를 보여줌
+
+ 결론
+ 1. 둘다 쓰는데 무리 없고 잘 동작, axios는 주로 react, fetch는 react native에 사용
+ 2. 전체적으로 이 둘은 비슷하나 axios가 좀 더 장점이 많음. 동시에 fetch의 단점도 많음
+ 3. fetch가 axios보다 상대적으로 가벼움(제공하는 기능이 많음)
+ 4. 요청 취소를 위해선 fetch가 아닌 axios 등의 다른 라이브러리 사용이 필요
+
+ <express 설치>
+ 1. node -v  (node 버전 확인)
+ 2. npm -v (npm 버전 확인)
+ 3. npm install -g npm (npm 설치)
+ 4. mkdir express-tutorial (exrpess-tutorial directory 생성)
+ 5. cd express-tutorial (express-tutorial directory로 이동)
+ 6. npm init (npm 생성)
+ 7. npm install --save express (express 설치)
+
+ <기본 라우팅>
+ app.METHOD(PATH, HANDLER)
+
+ METHOD : HTTP 요청 메소드 - get, post, delete, put ...
+ PATH : 라우트 경로
+ HANDLER : 실행될 콜백 함수
+
+ <미들웨어>
+ 정의 : 미들웨어 함수는 요청 오브젝트(req), 응답 오브젝트(res), 그리고 애플리케이션의 요청-응답 주기 중 그 다음의 미들웨어 함수에 대한 엑세스 건한을 갖는 함수
+
+ 설치 : npm install --save morgan body-parser
+ ( *morgan : 로깅 미들웨어, *body-parser : JSON형태 데이터 파싱)
+
+*npm repo morgan > git hub 페이지에 있는 morgan 설명을 볼 수 있음
+
+<Nodemon>
+node main.js 를 껏다 켯다 반복하는걸 해결하는 방법!
+
+*설치방법 : npm install -g nodemon {-g(global)로 설치해야 터미널에서 }실행
+*설명 : npm repo nodemon 
