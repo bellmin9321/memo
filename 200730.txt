@@ -23,7 +23,7 @@ UI vs API
 웹 페이지에 잇는 어떤 태그를 삭제하고 싶거나 자식태그를 추가하고 싶다면
 
 Document 객체 사용 > DOM(Document Object Model) 객체 > window 객체
-ajax(웹페이지를 reload하지않고고 정보만 변경하고 싶다면) 
+ajax(웹페이지를 reload하지않고 정보만 변경하고 싶다면) 
 cookie(웹페이지가 reload돼도 현재 상태를 유지하고싶다면)
 offline web application(인터넷이 끊겨도 동작하는 웹페이지를 만들고 싶다면)
 webRTC(화상통신 웹 앱을 만들고 싶다면)
@@ -68,3 +68,14 @@ Package Manager > 소프트웨어들을 관리(생성, 설치, 업데이트, 삭
 list 보기 : pm2 list
 자동 변경 : pm2 start main.js --watch
 문제점 확인 : pm2 log
+
+---------------------------------------------------------------------
+<form action="http://localhost:3000/process_create" method="post"> // post는 보안을 위한 것
+    <p><input type="text" name="title"></p>
+    <p>
+        <textarea name="description"></textarea>
+    </p>
+    <p>
+        <input type="submit">
+    </p> 
+</form>
